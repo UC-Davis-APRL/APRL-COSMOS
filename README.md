@@ -1,8 +1,8 @@
-# OpenC3 COSMOS Plugin
+# APRL-COSMOS Plugin
 
-See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
+This plugin configures OpenC3
 
-Update this comment with your own description.
+See the [OpenC3](https://docs.openc3.com) documentation for all things OpenC3.
 
 ## Getting Started
 

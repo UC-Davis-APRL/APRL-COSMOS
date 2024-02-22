@@ -1,6 +1,7 @@
 import socket, struct, time
 
 UDP_IP = "127.0.0.1"
+#UDP_IP = "10.0.0.51"
 UDP_PORT = 1682
 
 flag = 0
@@ -22,10 +23,11 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 start = time.time()
 
-for x in range(1, 1000):
-    test = struct.pack("IIIIIIIIIIIIII", flag, nottime, nitroT, keroInj, loxInj, keroMani, loxMani, keroFlow, loxFlow, enginePress, loadCell_A, loadCell_B, thermocouple_A, thermocouple_B)
+for x in range(1, 100):
+    test = struct.pack("IIIIIIIIII", flag, nottime, nitroT, keroInj, loxInj, keroMani, loxMani, keroFlow, loxFlow, enginePress)
         
     sock.sendto(test, (UDP_IP, UDP_PORT))
     
     end = time.time()
     print(f"{end - start} seconds elapsed, {x} packets sent")
+    time.sleep(0.1)
