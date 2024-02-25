@@ -1,4 +1,4 @@
-TELEMETRY APRL SENSORS LITTLE_ENDIAN "Readings from rocket sensors"
+TELEMETRY APRL SENSORS BIG_ENDIAN "Readings from rocket sensors"
   # Keyword      Name       BitSize Type   ID Description
   APPEND_ID_ITEM FLAG       32      UINT   0  "Identifies Telemetry Packet; value of 0 indicates telemetry"
   APPEND_ITEM    NITROT     32      UINT      "Nitrogen Tank Pressure from ADC in counts"
