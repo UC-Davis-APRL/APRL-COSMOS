@@ -1,0 +1,24 @@
+SCREEN AUTO AUTO 1.0
+
+TITLE "Commands"
+
+HORIZONTALBOX
+
+    VERTICAL
+        HORIZONTAL "Isolator Valves"
+            BUTTON "Kero Isol" 'api.cmd("APRL TOGGLE_RELAY with VALUE 1")'
+            BUTTON "LOX Isol" 'api.cmd("APRL TOGGLE_RELAY with VALUE 2")'
+        END
+        HORIZONTAL "Main Valves"
+            BUTTON "Kero Main" 'api.cmd("APRL TOGGLE_RELAY with VALUE 3")'
+            BUTTON "LOX Main" 'api.cmd("APRL TOGGLE_RELAY with VALUE 4")'
+        END
+        HORIZONTAL "Vent Valves"
+            BUTTON "Kero Vent" 'api.cmd("APRL TOGGLE_RELAY with VALUE 5")'
+            BUTTON "LOX Vent" 'api.cmd("APRL TOGGLE_RELAY with VALUE 6")'
+        END
+        BUTTON "Purge" 'api.cmd("APRL TOGGLE_RELAY with VALUE 7")'
+
+
+
+END

@@ -4,7 +4,7 @@ VARIABLE aprl_target_name APRL
 
 TARGET APRL <%= aprl_target_name %>
 
-# Ideally both ports use 1682 but for udp2serial testing we have to use separate ports
+# Both ports use 1682 but for udp2serial testing we have to use separate ports
 
-INTERFACE <%= aprl_target_name %>_INT udp_interface.rb host.docker.internal 1683 1682 
+INTERFACE <%= aprl_target_name %>_INT udp_interface.rb host.docker.internal 1682 1682 
   MAP_TARGET <%= aprl_target_name %>
