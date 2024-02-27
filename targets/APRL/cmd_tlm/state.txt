@@ -1,0 +1,8 @@
+TELEMETRY APRL VALVE_STATE BIG_ENDIAN
+   # Keyword      Name       BitSize Type   ID Description
+    APPEND_ID_ITEM FLAG       32      UINT   2  "Identifies State Telemetry Packet; value of 0 indicates telemetry"
+    APPEND_ITEM    NITROT     32      UINT      "Nitrogen Tank valve state"
+    APPEND_ITEM    KEROT      32      UINT      "Kerosene Tank valve state"
+    APPEND_ITEM    LOXT       32      UINT      "LOX Tank valve state"
+    APPEND_ITEM    KEROMAIN   32      UINT      "Kerosene main valve status"
+    APPEND_ITEM    LOXMAIN    32      UINT      "LOX main valve status"

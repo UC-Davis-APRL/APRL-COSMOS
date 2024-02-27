@@ -1,15 +1,15 @@
 # COMMAND APRL EXAMPLE BIG_ENDIAN "Packet description"
-  # Keyword           Name  BitSize Type   Min Max  Default  Description
-  
-COMMAND APRL TOGGLE_RELAY LITTLE_ENDIAN   
-  APPEND_ID_PARAMETER ID    32      UINT    1   1    1       "Identifies Command Packet"
-  APPEND_PARAMETER    VALUE 32      UINT    0   7    0       "Number of the relay to toggle; defaults to 0 (nothing) for safety"
+    # Keyword           Name  BitSize Type   Min Max  Default  Description
 
-COMMAND APRL SEQUENCE LITTLE_ENDIAN
-  APPEND_ID_PARAMETER ID    32      UINT    1   1    1       "Identifies Command Packet"
-  APPEND_PARAMETER    VALUE 32      UINT    10  14   10      "Number of the sequence to activate: defaults to 10 for safety"
+COMMAND APRL TOGGLE_RELAY BIG_ENDIAN   
+    APPEND_ID_PARAMETER ID    32      UINT    1   1    1       "Identifies Command Packet"
+    APPEND_PARAMETER    VALUE 32      UINT    0   7    0       "Number of the relay to toggle; defaults to 0 (nothing) for safety"
 
-COMMAND APRL EMERGENCY LITTLE_ENDIAN
-  APPEND_ID_PARAMETER ID    32      UINT    1   1    1       "Identifies Command Packet"
-  APPEND_PARAMETER    VALUE 32      UINT    20  22   22      "Number of the emergency sequence to activate: defaults to 20 for safety"
+COMMAND APRL SEQUENCE BIG_ENDIAN
+    APPEND_ID_PARAMETER ID    32      UINT    1   1    1       "Identifies Command Packet"
+    APPEND_PARAMETER    VALUE 32      UINT    10  14   10      "Number of the sequence to activate: defaults to 10 for safety"
+
+COMMAND APRL EMERGENCY BIG_ENDIAN
+    APPEND_ID_PARAMETER ID    32      UINT    1   1    1       "Identifies Command Packet"
+    APPEND_PARAMETER    VALUE 32      UINT    20  22   22      "Number of the emergency sequence to activate: defaults to 20 for safety"
 

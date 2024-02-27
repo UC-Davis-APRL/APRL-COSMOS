@@ -4,7 +4,7 @@ TITLE "Commands"
 
 HORIZONTALBOX
 
-    VERTICAL
+    VERTICALBOX
         HORIZONTAL "Isolator Valves"
             BUTTON "Kero Isol" 'api.cmd("APRL TOGGLE_RELAY with VALUE 1")'
             BUTTON "LOX Isol" 'api.cmd("APRL TOGGLE_RELAY with VALUE 2")'
@@ -17,7 +17,15 @@ HORIZONTALBOX
             BUTTON "Kero Vent" 'api.cmd("APRL TOGGLE_RELAY with VALUE 5")'
             BUTTON "LOX Vent" 'api.cmd("APRL TOGGLE_RELAY with VALUE 6")'
         END
-        BUTTON "Purge" 'api.cmd("APRL TOGGLE_RELAY with VALUE 7")'
+        BUTTON "Purge Valve" 'api.cmd("APRL TOGGLE_RELAY with VALUE 7")'
+    END
+
+    VERTICALBOX
+        BUTTON "Valve Calibration" 'api.cmd("APRL SEQUENCE with VALUE 11")'
+        BUTTON "Pressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 12")'
+        BUTTON "Purge Sequence" 'api.cmd("APRL SEQUENCE with VALUE 13")'
+        BUTTON "Engine Startup" 'api.cmd("APRL SEQUENCE with VALUE 14")'
+    END
 
 
 
