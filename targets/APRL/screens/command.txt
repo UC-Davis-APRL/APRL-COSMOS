@@ -2,9 +2,9 @@ SCREEN AUTO AUTO 1.0
 
 TITLE "Commands"
 
-HORIZONTALBOX
+HORIZONTALBOX "" 25
 
-    VERTICALBOX
+    VERTICALBOX "Valve Controls"
         HORIZONTAL "Isolator Valves"
             BUTTON "Kero Isol" 'api.cmd("APRL TOGGLE_RELAY with VALUE 1")'
             BUTTON "LOX Isol" 'api.cmd("APRL TOGGLE_RELAY with VALUE 2")'
@@ -20,7 +20,7 @@ HORIZONTALBOX
         BUTTON "Purge Valve" 'api.cmd("APRL TOGGLE_RELAY with VALUE 7")'
     END
 
-    VERTICALBOX
+    VERTICALBOX "Sequences"
         BUTTON "Valve Calibration" 'api.cmd("APRL SEQUENCE with VALUE 11")'
         BUTTON "Pressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 12")'
         BUTTON "Purge Sequence" 'api.cmd("APRL SEQUENCE with VALUE 13")'
