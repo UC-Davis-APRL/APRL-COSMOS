@@ -30,7 +30,7 @@ module OpenC3
       # Perform conversion logic directly on value
       # Used when conversion is applied to a regular (not DERIVED) item
       # NOTE: You can also use packet.read("ITEM") to get additional values
-      return value * (5.0 / 8388608) * @sensor_range
+      return ((value * (5.0 / 8388608)) - 0.48) / 1.92 * @sensor_range
     end
   end
 end
