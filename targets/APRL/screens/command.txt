@@ -25,6 +25,7 @@ HORIZONTALBOX "" 25
         BUTTON "Pressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 12")'
         BUTTON "Purge Sequence" 'api.cmd("APRL SEQUENCE with VALUE 13")'
         BUTTON "Engine Startup" 'api.cmd("APRL SEQUENCE with VALUE 14")'
+        BUTTON "Depressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 15")'
     END
 
 

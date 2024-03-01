@@ -8,7 +8,7 @@ spec = Gem::Specification.new do |s|
     APRL-COSMOS plugin for deployment to OpenC3
   EOF
   s.license = 'MIT'
-  s.authors = ['Jason Huang, APRL Electrical', 'Hieu Bui, APRL Electrical']
+  s.authors = ['Jason Huang, APRL Electrical', 'Hieu Bui, APRL Electrical', 'Daniel Fan, APRL Electrical']
   s.email = ['nuclearfizzler@gmail.com']
   s.homepage = 'https://github.com/OpenC3/openc3'
   s.platform = Gem::Platform::RUBY
