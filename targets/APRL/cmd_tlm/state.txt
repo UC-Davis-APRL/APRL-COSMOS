@@ -1,8 +1,10 @@
 TELEMETRY APRL VALVE_STATE BIG_ENDIAN
    # Keyword      Name       BitSize Type   ID Description
-    APPEND_ID_ITEM FLAG       32      UINT   2  "Identifies State Telemetry Packet; value of 0 indicates telemetry"
-    APPEND_ITEM    NITROT     32      UINT      "Nitrogen Tank valve state"
-    APPEND_ITEM    KEROT      32      UINT      "Kerosene Tank valve state"
-    APPEND_ITEM    LOXT       32      UINT      "LOX Tank valve state"
-    APPEND_ITEM    KEROMAIN   32      UINT      "Kerosene main valve status"
-    APPEND_ITEM    LOXMAIN    32      UINT      "LOX main valve status"
+    APPEND_ID_ITEM FLAG       32      UINT   2  "Identifies State Telemetry Packet; value of 2 indicates valve state update feedback"
+    APPEND_ITEM    ISOK       8       UINT      "Kerosene Isolation Valve State"
+    APPEND_ITEM    ISOL       8       UINT      "LOX Isolation Valve State"
+    APPEND_ITEM    MAINK      8       UINT      "Kerosene Main Valve State"
+    APPEND_ITEM    MAINL      8       UINT      "LOX Main Valve State"
+    APPEND_ITEM    VENTK      8       UINT      "Kerosene Vent Valve State"
+    APPEND_ITEM    VENTL      8       UINT      "LOX Vent Valve State"
+    APPEND_ITEM    PURGE      8       UINT      "Purge Valve State"
