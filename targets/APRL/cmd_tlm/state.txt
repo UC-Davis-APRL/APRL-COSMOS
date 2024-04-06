@@ -8,3 +8,4 @@ TELEMETRY APRL VALVE_STATE BIG_ENDIAN
     APPEND_ITEM    VENTK      32      UINT      "Kerosene Vent Valve State"
     APPEND_ITEM    VENTL      32      UINT      "LOX Vent Valve State"
     APPEND_ITEM    PURGE      32      UINT      "Purge Valve State"
+    APPEND_ITEM    BREAK      32      UINT      "Break Valve State"
