@@ -13,8 +13,8 @@ TELEMETRY APRL SENSORS BIG_ENDIAN "Readings from rocket sensors"
         READ_CONVERSION adc_conversion.rb 1000
     APPEND_ITEM    DOME   32      UINT      "DOME from ADC in counts"
         READ_CONVERSION adc_conversion.rb 1000
-    APPEND_ITEM    LOXFLOW    32      UINT      "LOX Flow Rate from ADC in counts"
-        READ_CONVERSION adc_conversion.rb 60
     APPEND_ITEM    ENGPRES    32      UINT      "Combustion Chamber Pressure from ADC in counts"
         READ_CONVERSION adc_conversion.rb 3000
+    APPEND_ITEM    LOXFLOW    32      UINT      "LOX Flow Rate from ADC in counts"
+        READ_CONVERSION adc_conversion.rb 60
     APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
