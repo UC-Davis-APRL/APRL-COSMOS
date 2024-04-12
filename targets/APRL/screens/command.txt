@@ -21,11 +21,12 @@ HORIZONTALBOX "" 25
     END
 
     VERTICALBOX "Sequences"
-        BUTTON "Valve Calibration" 'api.cmd("APRL SEQUENCE with VALUE 11")'
-        BUTTON "Pressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 12")'
-        BUTTON "Purge Sequence" 'api.cmd("APRL SEQUENCE with VALUE 13")'
-        BUTTON "Engine Startup" 'api.cmd("APRL SEQUENCE with VALUE 14")'
+        BUTTON "Enable Manual Control" 'api.cmd("APRL SEQUENCE with VALUE 11")'
+        BUTTON "Pressurize" 'api.cmd("APRL SEQUENCE with VALUE 12")'
+        BUTTON "Reset to Default" 'api.cmd("APRL SEQUENCE with VALUE 13")'
+        BUTTON "Fire" 'api.cmd("APRL SEQUENCE with VALUE 14")'
         BUTTON "Depressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 15")'
+        BUTTON "Abort Now" 'api.cmd("APRL SEQUENCE with VALUE 16")'
     END
 
 

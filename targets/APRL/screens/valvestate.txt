@@ -43,10 +43,26 @@ VERTICALBOX "" 5
             SETTING LED_COLOR 1 GREEN
     END
 
-    HORIZONTALBOX "continuity"
+    HORIZONTALBOX "Breakwire Continuity"
         LABELLED APRL VALVE_STATE BREAK CONVERTED 20 20
         SETTING LED_COLOR ANY YELLOW
             SETTING LED_COLOR 0 RED
             SETTING LED_COLOR 1 GREEN
+    END
+
+    HORIZONTALBOX "Key Safety/MCU CTRL EN"
+        LABELLED APRL VALVE_STATE KEY CONVERTED 20 20
+        SETTING LED_COLOR ANY YELLOW
+            SETTING LED_COLOR 0 RED
+            SETTING LED_COLOR 1 GREEN
+    END
+
+    HORIZONTALBOX "Current State"
+        VALUE APRL VALVE_STATE MACHINE FORMATTED 5
+        LABEL "0 = Default"
+        LABEL "1 = Armed"
+        LABEL "2 = Hot(Firing)"
+        LABEL "3 = Manual"
+        LABEL "4 = Key not inserted"
     END
 END
