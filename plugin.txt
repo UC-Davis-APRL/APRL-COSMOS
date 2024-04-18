@@ -4,7 +4,14 @@ VARIABLE aprl_target_name APRL
 
 TARGET APRL <%= aprl_target_name %>
 
+VARIABLE lcell_target_name LCELL
+
+TARGET LCELL <%= lcell_target_name %>
+
 # Both ports use 1682 but for udp2serial testing we have to use separate ports
 
-INTERFACE <%= aprl_target_name %>_INT udp_interface.rb 10.0.0.69 1682 1682 
+INTERFACE <%= aprl_target_name %>_INT udp_interface.rb 192.168.88.250 1682 1682 
   MAP_TARGET <%= aprl_target_name %>
+
+INTERFACE <%= lcell_target_name %>_INT udp_interface.rb 192.168.88.247 1683 1683 
+  MAP_TARGET <%= lcell_target_name %>

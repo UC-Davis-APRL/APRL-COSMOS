@@ -1,0 +1,12 @@
+TELEMETRY LCELL LOAD BIG_ENDIAN "Readings from load cells"
+    # Keyword      Name       BitSize Type   ID Description
+    APPEND_ID_ITEM FLAG       32      UINT   7  "Identifies load cell packet; value of 7 indicates this packet"
+    APPEND_ITEM    LOAD1      32      INT       "LC1 in counts"
+        READ_CONVERSION lc_conversion.rb 300 -76 2
+    APPEND_ITEM    LOAD2      32      INT       "LC2 in counts"
+        READ_CONVERSION lc_conversion.rb 300 9 2
+    APPEND_ITEM    LOAD3      32      INT       "LC3 in counts"
+        READ_CONVERSION lc_conversion.rb 300 101 2
+    APPEND_ITEM    LOAD4      32      INT       "LC4 in counts"
+        READ_CONVERSION lc_conversion.rb 300 -42 2
+    APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
