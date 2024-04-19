@@ -5,7 +5,7 @@ module OpenC3
   # Custom conversion class
   # See https://openc3.com/docs/v5/telemetry#read_conversion
   class LcConversion < Conversion
-    def initialize(range_kg, offset_kg, sensitivity_mvv)
+    def initialize(range_kg, offset_kg, scaleFactor_x)
       super()
       # Should be one of :INT, :UINT, :FLOAT, :STRING, :BLOCK
       @converted_type = :FLOAT
@@ -15,7 +15,7 @@ module OpenC3
       # Multiplier converting voltages to output values
       @range_kg = range_kg.to_f
       @offset_kg = offset_kg.to_f
-      @sensitivity_mvv = sensitivity_mvv.to_f
+      @scaleFactor_x = scaleFactor_x.to_f
     end
 
     # @param value [Object] Value based on the item definition. This could be
@@ -38,9 +38,10 @@ module OpenC3
       adc_reference_voltage = 5.0  # The reference voltage of ADC
       pga_gain = 128.0             # The PGA gain
       excitation_voltage = 5.0     # Load cell excitation voltage
+      sensitivity_mvv = 2.0
 
       # Calculating full scale output voltage of the load cell in mV
-      full_scale_output_mV = excitation_voltage * @sensitivity_mvv
+      full_scale_output_mV = excitation_voltage * sensitivity_mvv * @scaleFactor_x
 
       # Perform sign extension from 24-bit to 32-bit if necessary
       if value & 0x00800000 != 0  # Check if the 24th bit is set (negative number)
@@ -56,7 +57,7 @@ module OpenC3
 
       # Calculate force based on the voltage and the full scale output
       # Formula matches expected format
-      force = (voltage_in_millivolts / full_scale_output_mV) * @range_kg - @offset_kg
+      force = (voltage_in_millivolts / full_scale_output_mV) * @range_kg + @offset_kg
 
       return force
     end
