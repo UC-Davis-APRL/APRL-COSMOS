@@ -4,9 +4,9 @@ TELEMETRY LCELL LOAD BIG_ENDIAN "Readings from load cells"
     APPEND_ITEM    LOAD1      32      INT       "LC1 in counts"
         READ_CONVERSION lc_conversion.rb 300 -0.435 1.06
     APPEND_ITEM    LOAD2      32      INT       "LC2 in counts"
-        READ_CONVERSION lc_conversion.rb 300 0 1
+        READ_CONVERSION lc_conversion.rb 300 2.8 1.05
     APPEND_ITEM    LOAD3      32      INT       "LC3 in counts"
         READ_CONVERSION lc_conversion.rb 300 -2.43 1.07
     APPEND_ITEM    LOAD4      32      INT       "LC4 in counts"
-        READ_CONVERSION lc_conversion.rb 300 -0.377 1.05
+        READ_CONVERSION lc_conversion.rb 300 1.1 1.05 
     APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
