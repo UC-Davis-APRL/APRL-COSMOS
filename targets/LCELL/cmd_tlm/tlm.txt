@@ -10,3 +10,7 @@ TELEMETRY LCELL LOAD BIG_ENDIAN "Readings from load cells"
     APPEND_ITEM    LOAD4      32      INT       "LC4 in counts"
         READ_CONVERSION lc_conversion.rb 300 1.1 1.05 
     APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
+    
+    # Derived Loadcell sum
+    ITEM           LOAD_SUM   0 0     DERIVED    "Summed loadcell readings"
+        READ_CONVERSION lc_sum.rb
