@@ -5,7 +5,7 @@ module OpenC3
   # Custom conversion class
   # See https://openc3.com/docs/v5/telemetry#read_conversion
   class AdcConversion < Conversion
-    def initialize(sensor_range)
+    def initialize(range_psi, offset_psi)
       super()
       # Should be one of :INT, :UINT, :FLOAT, :STRING, :BLOCK
       @converted_type = :FLOAT
@@ -13,7 +13,9 @@ module OpenC3
       # Use 0 for :STRING or :BLOCK where the size can be variable
       @converted_bit_size = 64
       # Multiplier converting voltages to output values
-      @sensor_range = sensor_range.to_f
+      @range_psi = range_psi.to_f
+      # Offset psi
+      @offset_psi = offset_psi.to_f
     end
 
     # @param value [Object] Value based on the item definition. This could be
@@ -30,7 +32,7 @@ module OpenC3
       # Perform conversion logic directly on value
       # Used when conversion is applied to a regular (not DERIVED) item
       # NOTE: You can also use packet.read("ITEM") to get additional values
-      return ((value * (5.0 / 8388608)) - 0.48) / 1.92 * @sensor_range
+      return ((value * (5.0 / 8388608)) - 0.48) / 1.92 * @range_psi + @offset_psi
     end
   end
 end

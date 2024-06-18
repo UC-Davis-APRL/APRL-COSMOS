@@ -1,5 +1,5 @@
 TELEMETRY LCELL LOAD BIG_ENDIAN "Readings from load cells"
-    # Keyword      Name       BitSize Type   ID Description
+    # Keyword      Name       BitSize Type   ID Offset ScalingX Description
     APPEND_ID_ITEM FLAG       32      UINT   7  "Identifies load cell packet; value of 7 indicates this packet"
     APPEND_ITEM    LOAD1      32      INT       "LC1 in counts"
         READ_CONVERSION lc_conversion.rb 300 -19.5 1.06
