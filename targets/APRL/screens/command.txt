@@ -1,6 +1,6 @@
 SCREEN AUTO AUTO 1.0
 
-TITLE "Commands"
+TITLE "Remote Control"
 
 HORIZONTALBOX "" 25
 
@@ -20,13 +20,13 @@ HORIZONTALBOX "" 25
         BUTTON "Purge Valve" 'api.cmd("APRL TOGGLE_RELAY with VALUE 7")'
     END
 
-    VERTICALBOX "Sequences"
-        BUTTON "Enable Manual Control" 'api.cmd("APRL SEQUENCE with VALUE 11")'
-        BUTTON "Pressurize" 'api.cmd("APRL SEQUENCE with VALUE 12")'
-        BUTTON "Reset to Default" 'api.cmd("APRL SEQUENCE with VALUE 13")'
-        BUTTON "Fire" 'api.cmd("APRL SEQUENCE with VALUE 14")'
-        BUTTON "Depressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 15")'
-        BUTTON "Abort Now" 'api.cmd("APRL SEQUENCE with VALUE 16")'
+    VERTICALBOX "System Control/Seqeuences"
+        BUTTON "Enable Remote Manual Control" 'api.cmd("APRL SEQUENCE with VALUE 11")'
+        BUTTON "Transition: Pressurize" 'api.cmd("APRL SEQUENCE with VALUE 12")'
+        BUTTON "Reset to Default(Disabled)" 'api.cmd("APRL SEQUENCE with VALUE 13")'
+        BUTTON "Command: Fire" 'api.cmd("APRL SEQUENCE with VALUE 14")'
+        BUTTON "Command: Depressurize Tanks" 'api.cmd("APRL SEQUENCE with VALUE 15")'
+        BUTTON "Command: Abort Now" 'api.cmd("APRL SEQUENCE with VALUE 16")'
     END
 
 

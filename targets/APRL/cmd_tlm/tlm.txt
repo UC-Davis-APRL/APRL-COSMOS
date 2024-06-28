@@ -10,11 +10,11 @@ TELEMETRY APRL SENSORS BIG_ENDIAN "Readings from rocket sensors"
     APPEND_ITEM    KEROMAN    32      UINT      "Kerosene Manifold / Downstream Pressure from ADC in counts"
         READ_CONVERSION adc_conversion.rb 1000 -4.00
     APPEND_ITEM    LOXMAN     32      UINT      "LOX Manifold / Downstream Pressure from ADC in counts"
-        READ_CONVERSION adc_conversion.rb 1000 0
-    APPEND_ITEM    LOXFLOW    32      UINT      "Lox flow from ADC in counts"
-        READ_CONVERSION adc_conversion.rb 60 0
-    APPEND_ITEM    DOME       32      UINT      "Combustion Chamber Pressure from ADC in counts"
         READ_CONVERSION adc_conversion.rb 3000 0
+    APPEND_ITEM    CHAMBER    32      UINT      "Chamber from ADC in counts"
+        READ_CONVERSION adc_conversion.rb 1000 0
+    APPEND_ITEM    SPARE       32      UINT      "UNUSED spare channel from ADC in counts"
+        READ_CONVERSION adc_conversion.rb 1000 0
     APPEND_ITEM    KEROFLOW   32      UINT      "Kero Flow Rate from ADC in counts"
         READ_CONVERSION adc_conversion.rb 60 0
     APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
