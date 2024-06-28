@@ -60,7 +60,7 @@ VERTICALBOX "" 5
     HORIZONTALBOX "Current State Machine Status"
         VALUE APRL VALVE_STATE MACHINE FORMATTED 5
         LABEL "0 = Remote Disabled(Default)"
-        LABEL "1 = State: Pressurized
+        LABEL "1 = State: Pressurized"
         LABEL "2 = State: Firing"
         LABEL "3 = Manual Remote Control"
         LABEL "4 = Remote Disarmed(Lockout)"
