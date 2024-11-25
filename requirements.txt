@@ -1,0 +1,2 @@
+# Python dependencies
+openc3 >= 5.20.0

@@ -8,8 +8,8 @@ spec = Gem::Specification.new do |s|
     APRL-COSMOS plugin for deployment to OpenC3
   EOF
   s.license = 'MIT'
-  s.authors = ['Jason Huang, APRL Electrical', 'Hieu Bui, APRL Electrical', 'Daniel Fan, APRL Electrical']
-  s.email = ['nuclearfizzler@gmail.com']
+  s.authors = ['Jason Huang, APRL Electrical', 'Daniel Fan, APRL Electrical']
+  s.email = ['jsjhuang@ucdavis.edu', 'djfan@ucdavis.edu']
   s.homepage = 'https://github.com/OpenC3/openc3'
   s.platform = Gem::Platform::RUBY
 
@@ -19,5 +19,5 @@ spec = Gem::Specification.new do |s|
     time = Time.now.strftime("%Y%m%d%H%M%S")
     s.version = '0.0.0' + ".#{time}"
   end
-  s.files = Dir.glob("{targets,lib,tools,microservices}/**/*") + %w(Rakefile README.md LICENSE.txt plugin.txt)
+  s.files = Dir.glob("{targets,lib,tools,microservices}/**/*") + %w(Rakefile README.md LICENSE.txt plugin.txt requirements.txt)
 end
