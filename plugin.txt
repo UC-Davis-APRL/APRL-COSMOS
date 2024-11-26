@@ -1,7 +1,14 @@
 # Set VARIABLEs here to allow variation in your plugin
 
 VARIABLE aprl_target_name APRL
-
 TARGET APRL <%= aprl_target_name %>
-INTERFACE <%= aprl_target_name %>_INT openc3/interfaces/tcpip_client_interface.py host.docker.internal 8080 8081 10.0 None BURST
+
+VARIABLE lcell_target_name LCELL
+TARGET LCELL <%= lcell_target_name %>
+
+
+INTERFACE <%= aprl_target_name %>_INT openc3/interfaces/udp_interface.py host.docker.internal 1682 1682
   MAP_TARGET <%= aprl_target_name %>
+
+INTERFACE <%= lcell_target_name %>_INT openc3/interfaces/udp_interface.py host.docker.internal 1683 1683 
+  MAP_TARGET <%= lcell_target_name %>
