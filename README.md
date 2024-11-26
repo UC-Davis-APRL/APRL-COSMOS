@@ -13,8 +13,10 @@ See the [OpenC3](https://docs.openc3.com) documentation for all things OpenC3.
 
 1. Install your dependencies
    - Python
-   - Rake
-2. rake build VERSION=X.Y.Z
+2. Add openc3.sh to your PATH
+   - EXPORT PATH="$PATH:/path/to/cosmos-project" (Temporary)
+   - Add the above line to ~/.bashrc (Permanent)
+3. `openc3.sh cli rake build VERSION=X.Y.Z`
    - The plugin will be named APRL-COSMOS-X.Y.Z.gem
    - Install the gem into COSMOS to set it up
 
