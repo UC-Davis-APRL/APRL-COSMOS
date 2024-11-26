@@ -1,8 +1,20 @@
-TELEMETRY APRL STATUS BIG_ENDIAN "Telemetry description"
-  # Keyword      Name  BitSize Type   ID Description
-  APPEND_ID_ITEM ID    16      INT    1  "Identifier"
-  APPEND_ITEM    VALUE 32      FLOAT     "Value"
-  APPEND_ITEM    BOOL  8       UINT      "Boolean"
-    STATE FALSE 0
-    STATE TRUE 1
-  APPEND_ITEM    LABEL 0       STRING    "The label to apply"
+TELEMETRY APRL SENSORS BIG_ENDIAN "Readings from rocket sensors"
+    # Keyword      Name       BitSize Type   ID Offset Description
+    APPEND_ID_ITEM FLAG       32      UINT   0  "Identifies Telemetry Packet; value of 0 indicates telemetry"
+    APPEND_ITEM    NITROT     32      UINT      "Nitrogen Tank Pressure from ADC in counts"
+        READ_CONVERSION adc_conversion.py 5000 0
+    APPEND_ITEM    KEROT      32      UINT      "Kerosene Tank / Upstream Pressure from ADC in counts"
+        READ_CONVERSION adc_conversion.py 1000 0
+    APPEND_ITEM    LOXT       32      UINT      "LOX Tank / Upstream Pressure from ADC in counts"
+        READ_CONVERSION adc_conversion.py 1000 0
+    APPEND_ITEM    KEROMAN    32      UINT      "Kerosene Manifold / Downstream Pressure from ADC in counts"
+        READ_CONVERSION adc_conversion.py 1000 -4.00
+    APPEND_ITEM    LOXMAN     32      UINT      "LOX Manifold / Downstream Pressure from ADC in counts"
+        READ_CONVERSION adc_conversion.py 3000 0
+    APPEND_ITEM    CHAMBER    32      UINT      "Chamber from ADC in counts"
+        READ_CONVERSION adc_conversion.py 1000 0
+    APPEND_ITEM    SPARE       32      UINT      "UNUSED spare channel from ADC in counts"
+        READ_CONVERSION adc_conversion.py 1000 0
+    APPEND_ITEM    KEROFLOW   32      UINT      "Kero Flow Rate from ADC in counts"
+        READ_CONVERSION adc_conversion.py 60 0
+    APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
