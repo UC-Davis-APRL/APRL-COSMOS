@@ -46,10 +46,20 @@ docker run -it -v %cd%:/openc3/local -w /openc3/local docker.io/openc3inc/openc3
 
 ## Installing into OpenC3 COSMOS
 
+### PREREQ
+1. Ensure that ```OPENC3_DEMO=1``` is commented out in the .env file
+2. Ensure that UDP port 1682 and another required ports are exposed on the docker in the ```openc3-operator:``` section of the compose.yaml 
+   ```
+   ports:
+      - "127.0.0.1:1682:1682/udp" # etc etc
+   ```
+
+### Installing Plugin
 1. Go to the OpenC3 Admin Tool, Plugins Tab
-1. Click the paperclip icon and choose your plugin.gem file
-1. Fill out plugin parameters
-1. Click Install
+2. Click the paperclip icon and choose your plugin.gem file
+3. Fill out plugin parameters
+4. Click Install
+
 
 ## Contributing
 

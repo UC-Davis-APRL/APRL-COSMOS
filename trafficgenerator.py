@@ -1,8 +1,7 @@
 import socket, struct, time
 
-UDP_IP = "127.0.0.1"
-#UDP_IP = "10.0.0.51"
-UDP_PORT = 1683
+UDP_IP = "192.168.0.19"
+UDP_PORT = 1682
 
 flag = 7
 nottime = 69
@@ -26,9 +25,8 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 start = time.time()
 
 for x in range(1, 100):
-    #test = struct.pack(">IIIIIIIIII", flag, nottime, nitroT, keroInj, loxInj, keroMani, loxMani, keroFlow, loxFlow, enginePress)
-    test = struct.pack(">IIIIII", flag, loadCell_A, loadCell_B, loadCell_C, loadCell_D, nottime)
-
+    test = struct.pack("IIIIIIIIIIIIII", flag, nottime, nitroT, keroInj, loxInj, keroMani, loxMani, keroFlow, loxFlow, enginePress, loadCell_A, loadCell_B, thermocouple_A, thermocouple_B)
+        
     sock.sendto(test, (UDP_IP, UDP_PORT))
     
     end = time.time()
