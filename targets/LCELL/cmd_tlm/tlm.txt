@@ -13,4 +13,4 @@ TELEMETRY LCELL LOAD BIG_ENDIAN "Readings from load cells"
     
     # Derived Loadcell sum
     ITEM           LOAD_SUM   0 0     DERIVED    "Summed loadcell readings"
-        READ_CONVERSION lc_sum.py
+        READ_CONVERSION lc_sum_conversion.py

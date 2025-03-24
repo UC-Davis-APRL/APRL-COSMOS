@@ -13,9 +13,9 @@ class AdcConversion(Conversion):
         # Use 0 for 'STRING' or 'BLOCK' where the size can be variable
         self.converted_bit_size = 64
         # Multiplier converting voltages to output values
-        self.range_psi = float(range_psi.to_f)
+        self.range_psi = float(range_psi)
       # Offset psi
-        self.offset_psi = float(offset_psi.to_f)
+        self.offset_psi = float(offset_psi)
  
 
     # @param value [Object] Value based on the item definition. This could be

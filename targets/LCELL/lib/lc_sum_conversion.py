@@ -26,6 +26,6 @@ class LcSumConversion(Conversion):
         load1 = packet.read("LOAD1")  # returns CONVERTED value (default)
         load2 = packet.read("LOAD2")
         load3 = packet.read("LOAD3")
-        load4 = packet.read("LOAD4") 
+        load4 = packet.read("LOAD4")
 
         return(load1 + load2 + load3 + load4)
