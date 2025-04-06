@@ -1,6 +1,6 @@
 import socket, struct, time
 
-UDP_IP = "127.0.0.1"
+UDP_IP = "192.168.88.251"
 UDP_PORT = 1683
 
 flag = 7
