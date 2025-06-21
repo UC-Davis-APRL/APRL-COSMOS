@@ -11,3 +11,4 @@ TELEMETRY APRL VALVE_STATE BIG_ENDIAN
     APPEND_ITEM    BREAK      32      UINT      "Breakwire State"
     APPEND_ITEM    KEY        32      UINT      "Key/MCU ctrl status"
     APPEND_ITEM    MACHINE    32      UINT      "State Machine State ID"
+    APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
