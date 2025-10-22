@@ -7,7 +7,7 @@ from openc3.conversions.conversion import Conversion
 
 
 class LcConversion(Conversion):
-    def __init__(self, range_kg, offset_kg, scaleFactor_x):
+    def __init__(self, range_kg, scaleFactor_x, offset_kg):
         super().__init__()
         # Should be one of 'INT', 'UINT', 'FLOAT', 'STRING', 'BLOCK'
         self.converted_type = 'FLOAT'
@@ -19,16 +19,7 @@ class LcConversion(Conversion):
         self.offset_kg = float(offset_kg)
         self.scaleFactor_x = float(scaleFactor_x)
 
-    # @param value [Object] Value based on the item definition. This could be
-    #   a string, integer, float, or array of values.
-    # @param packet [Packet] The packet object where the conversion is defined
-    # @param buffer [String] The raw packet buffer
-    def call(self, value, packet, buffer):
-
-        # Perform conversion logic directly on value
-        # Used when conversion is applied to a regular (not DERIVED) item
-        # NOTE: You can also use packet.read("ITEM") to get additional values
-
+    def _convert_one(self, value):
         # Constants
         adc_reference_voltage = 5.0  # The reference voltage of ADC
         pga_gain = 128.0             # The PGA gain
@@ -47,10 +38,17 @@ class LcConversion(Conversion):
         voltage_measured = (float(value) / 8388608.0) * (adc_reference_voltage / pga_gain)
 
         # Convert voltage to millivolts
-        voltage_in_millivolts = voltage_measured * 1000.0
+        mv = voltage_measured * 1000.0
 
-        # Calculate force based on the voltage and the full scale output
-        # Formula matches expected format
-        force = (voltage_in_millivolts / full_scale_output_mV) * self.range_kg + self.offset_kg
+        return (mv / full_scale_output_mV) * self.range_kg + self.offset_kg
 
-        return force
+    # @param value [Object] Value based on the item definition. This could be
+    #   a string, integer, float, or array of values.
+    # @param packet [Packet] The packet object where the conversion is defined
+    # @param buffer [String] The raw packet buffer
+    def call(self, value, packet, buffer):
+
+        # value is a list for ARRAY_ITEMs; support both list and scalar
+        if isinstance(value, (list, tuple)):
+            return [self._convert_one(x) for x in value]
+        return self._convert_one(value)

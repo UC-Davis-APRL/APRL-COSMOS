@@ -23,9 +23,10 @@ class LcSumConversion(Conversion):
         # Read values from the packet and do a conversion
         # Used for DERIVED items that don't have a value
 
-        load1 = packet.read("LOAD1")  # returns CONVERTED value (default)
-        load2 = packet.read("LOAD2")
-        load3 = packet.read("LOAD3")
-        load4 = packet.read("LOAD4")
+        l1 = packet.read("LOAD1")
+        l2 = packet.read("LOAD2")
+        l3 = packet.read("LOAD3")
+        l4 = packet.read("LOAD4")
 
-        return(load1 + load2 + load3 + load4)
+        n = min(len(l1), len(l2), len(l3), len(l4))
+        return [l1[i] + l2[i] + l3[i] + l4[i] for i in range(n)]
