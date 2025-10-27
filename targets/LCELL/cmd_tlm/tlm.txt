@@ -18,7 +18,7 @@ TELEMETRY LCELL LOAD LITTLE_ENDIAN "Readings from load cells"
     ITEM           LOAD_SUM   0 0     DERIVED    "Summed loadcell readings"
         READ_CONVERSION lc_sum_conversion.py
 
-    # "Derived" first value of loadcell reading buffers so it actually gets converted
+    # "Derived" first value of loadcell reading arrays so it actually gets converted
     ITEM           READ_L1    0 0     DERIVED    "Converted value of LOAD1 from RAW"
         READ_CONVERSION lc_read_first.py LOAD1
     
