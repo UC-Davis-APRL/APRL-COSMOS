@@ -7,7 +7,7 @@ from openc3.conversions.conversion import Conversion
 
 
 class AdcConversion(Conversion):
-    def __init__(self, range_kg, scaleFactor_x, offset_kg):
+    def __init__(self, range_psi, offset_psi):
         super().__init__()
         # Should be one of 'INT', 'UINT', 'FLOAT', 'STRING', 'BLOCK'
         self.converted_type = 'FLOAT'
@@ -15,32 +15,16 @@ class AdcConversion(Conversion):
         # Use 0 for 'STRING' or 'BLOCK' where the size can be variable
         self.converted_bit_size = 64
         # Multiplier converting voltages to output values
-        self.range_kg = float(range_kg)
-        self.offset_kg = float(offset_kg)
-        self.scaleFactor_x = float(scaleFactor_x)
+        self.range_psi = float(range_psi)
+        self.offset_psi = float(offset_psi)
 
     def _convert_one(self, value):
-        # Constants
-        adc_reference_voltage = 5.0  # The reference voltage of ADC
-        pga_gain = 128.0             # The PGA gain
-        excitation_voltage = 5.0     # Load cell excitation voltage
-        sensitivity_mvv = 2.0
-
-        # Calculating full scale output voltage of the load cell in mV
-        full_scale_output_mV = excitation_voltage * sensitivity_mvv * self.scaleFactor_x
 
         # Perform sign extension from 24-bit to 32-bit if necessary
         if (value & 0x00800000) != 0:  # Check if the 24th bit is set (negative number)
             value |= 0xFF000000  # Extend the sign to the 32-bit integer
         
-        # Convert ADC count to voltage considering the PGA gain
-        # Adjusting the calculation to correctly scale bipolar ADC output from -8388608 to +8388607
-        voltage_measured = (float(value) / 8388608.0) * (adc_reference_voltage / pga_gain)
-
-        # Convert voltage to millivolts
-        mv = voltage_measured * 1000.0
-
-        return (mv / full_scale_output_mV) * self.range_kg + self.offset_kg
+        return ((value * (5.0 / 8388608)) - 0.48) / 1.92 * self.range_psi + self.offset_psi
 
     # @param value [Object] Value based on the item definition. This could be
     #   a string, integer, float, or array of values.

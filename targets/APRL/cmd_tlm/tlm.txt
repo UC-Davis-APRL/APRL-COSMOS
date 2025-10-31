@@ -17,7 +17,7 @@ TELEMETRY APRL SENSORS LITTLE_ENDIAN "Readings from rocket sensors"
         READ_CONVERSION adc_conversion.py 1000 0
     APPEND_ARRAY_ITEM    CHAMBER  32       UINT   1600      "UNUSED spare channel from ADC in counts"
         READ_CONVERSION adc_conversion.py 1000 0
-    APPEND_ARRAY_ITEM    FLOW     32       UINT   1600      "Flow Rate from ADC in counts"
+    APPEND_ARRAY_ITEM    KEROFLOW 32       UINT   1600      "Flow Rate from ADC in counts"
         READ_CONVERSION adc_conversion.py 60 0
     APPEND_ITEM    TIME       32      UINT      "Time the reading was logged on the rocket"
 
@@ -39,7 +39,7 @@ TELEMETRY APRL SENSORS LITTLE_ENDIAN "Readings from rocket sensors"
 
     ITEM           READ_CHAMBER    0 0     DERIVED    "Converted value of CHAMBER from RAW"
     READ_CONVERSION adc_read_first.py CHAMBER
-    ITEM           READ_FLOW     0 0     DERIVED    "Converted value of FLOW from RAW"
-        READ_CONVERSION adc_read_first.py FLOW
+    ITEM           READ_KEROFLOW   0 0     DERIVED    "Converted value of FLOW from RAW"
+        READ_CONVERSION adc_read_first.py KEROFLOW
 
     
