@@ -4,13 +4,13 @@ TELEMETRY LCELL LOAD LITTLE_ENDIAN "Readings from load cells"
     
     # Keyword            Name     ItemSize Type   ArraySize Description
     APPEND_ARRAY_ITEM    LOAD1    32       INT    320       "LC1 in counts"
-        READ_CONVERSION lc_conversion.py 300 1 0
+        READ_CONVERSION lc_conversion.py 300 1 -56.68
     APPEND_ARRAY_ITEM    LOAD2    32       INT    320       "LC2 in counts"
-        READ_CONVERSION lc_conversion.py 300 1 0
+        READ_CONVERSION lc_conversion.py 300 1 52.7
     APPEND_ARRAY_ITEM    LOAD3    32       INT    320       "LC3 in counts"
-        READ_CONVERSION lc_conversion.py 300 1 0
+        READ_CONVERSION lc_conversion.py 300 1 79.05
     APPEND_ARRAY_ITEM    LOAD4    32       INT    320       "LC4 in counts"
-        READ_CONVERSION lc_conversion.py 300 1 0
+        READ_CONVERSION lc_conversion.py 300 1 -72.35
     
     APPEND_ITEM    LCTIME     32           UINT      "Time the reading was logged on the rocket"
     
