@@ -1,8 +1,28 @@
-TELEMETRY THERMO STATUS BIG_ENDIAN "Telemetry description"
-  # Keyword      Name  BitSize Type   ID Description
-  APPEND_ID_ITEM ID    16      INT    1  "Identifier"
-  APPEND_ITEM    VALUE 32      FLOAT     "Value"
-  APPEND_ITEM    BOOL  8       UINT      "Boolean"
-    STATE FALSE 0
-    STATE TRUE 1
-  APPEND_ITEM    LABEL 0       STRING    "The label to apply"
+TELEMETRY THERMO TCREAD LITTLE_ENDIAN "Telemetry description"
+   # Keyword            Name     BitSize Type   ID Description
+    APPEND_ID_ITEM       FLAG     32      UINT   9  "Identifies TC packet; value of indicates this packet"
+    
+    # Keyword            Name     ItemSize Type   ArraySize Description
+    APPEND_ARRAY_ITEM    TC1    32       INT    32       "TC1 in counts"
+        READ_CONVERSION tc_conversion.py 1 0
+    APPEND_ARRAY_ITEM    TC2    32       INT    32       "TC2 in counts"
+        READ_CONVERSION tc_conversion.py 1 0
+    APPEND_ARRAY_ITEM    TC3    32       INT    32       "TC3 in counts"
+        READ_CONVERSION tc_conversion.py 1 0
+    APPEND_ARRAY_ITEM    TC4    32       INT    32       "TC4 in counts"
+        READ_CONVERSION tc_conversion.py 1 0
+    APPEND_ITEM    TCTIME     32           UINT      "Time the reading was logged on the rocket"
+    
+
+    # "Derived" first value of TC reading arrays so it actually gets converted
+    ITEM           READ_TC1    0 0     DERIVED    "Converted value of TC1 from RAW"
+        READ_CONVERSION tc_read_first.py TC1
+    
+    ITEM           READ_TC2    0 0     DERIVED    "Converted value of TC2 from RAW"
+        READ_CONVERSION tc_read_first.py TC2
+
+    ITEM           READ_TC3    0 0     DERIVED    "Converted value of TC3 from RAW"
+        READ_CONVERSION tc_read_first.py TC3
+
+    ITEM           READ_TC4    0 0     DERIVED    "Converted value of TC4 from RAW"
+        READ_CONVERSION tc_read_first.py TC4

@@ -16,5 +16,5 @@ INTERFACE <%= lcell_target_name %>_INT openc3/interfaces/udp_interface.py 192.16
 VARIABLE thermo_target_name THERMO
 
 TARGET THERMO <%= thermo_target_name %>
-INTERFACE <%= thermo_target_name %>_INT openc3/interfaces/tcpip_client_interface.py host.docker.internal 1684 1684 10.0 None BURST
+INTERFACE <%= thermo_target_name %>_INT openc3/interfaces/udp_interface.py 192.168.88.157 1684 1684
   MAP_TARGET <%= thermo_target_name %>
